@@ -47,7 +47,7 @@ export const imgData = [
            img: img3,
            description:
              "A Cigar Club Website based in Bologna built with HTML and CSS",
-           button: "View Case Study",
+           button: "See Project",
            link:
              "https://siepelunga24.netlify.app/",
            icon: <BsFillArrowRightCircleFill />,
