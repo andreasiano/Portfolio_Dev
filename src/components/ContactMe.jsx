@@ -9,7 +9,7 @@ export default function ContactMe() {
         Let's Connect
       </h1>
       <p className="text-dimWhite xxs:text-xl mb-3 lg:text-2xl">
-        Feel free to reach out for collaborations or just say a friendly hello
+        Feel free to reach out for any collaborations or just say a friendly hello
       </p>
       <p className="text-gradient xxs:text-xl lg:text-2xl">
         <a href="mailto:andreadevpensieri@gmail.com">andreadevpensieri@gmail.com</a>
