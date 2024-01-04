@@ -14,12 +14,12 @@ const Hero = () => {
     >
       <div className={`flex-2 ${styles.flexStart} flex-col`}>
         <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 text-[60px] text-2xl mt-5 font-dmdisplay font-semibold ss:text-[52px] lg:text-[42px] lg:leading-[50px] text-white ss:leading-[60.8px] leading-[75px]">
+          <h1 className="flex-1 text-[45px] text-2xl mt-5 font-dmdisplay font-semibold ss:text-[52px] lg:text-[42px] lg:leading-[50px] text-white ss:leading-[60.8px] leading-[75px]">
             Building <br className="sm:block hidden" />{" "}
             <span className="text-gradient">Digital Products</span>,{" "}
           </h1>
         </div>
-        <h1 className="font-semibold text-[60px] font-dmdisplay ss:text-[52px] lg:text-[42px] text-white ss:leading-[60.8px] lg:leading-[50px] leading-[75px] w-full">
+        <h1 className="font-semibold text-[45px] font-dmdisplay ss:text-[52px] lg:text-[42px] text-white ss:leading-[60.8px] lg:leading-[50px] leading-[75px] w-full">
           Coding and More...
         </h1>
         <p

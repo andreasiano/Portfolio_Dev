@@ -21,7 +21,7 @@ export default function ImageCards() {
             className="shadow-xl font-dmdisplay relative overflow-hidden rounded-xl group"
             initial={{ opacity: 0, translateX: -50, translateY: -50 }}
             animate={controls}
-            transition={{ duration: 0.5, delay: i * 0.3 }}
+            transition={{ duration: 0.5, delay: i * 0.6 }}
           >
             <img
               className="transition-transform group-hover:scale-110 duration-1000 object-contain"
