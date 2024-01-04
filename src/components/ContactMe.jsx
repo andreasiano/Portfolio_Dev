@@ -1,10 +1,26 @@
-import React from 'react'
+import { useEffect } from "react";
 import { BsFacebook, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { FaDribbbleSquare } from "react-icons/fa";
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function ContactMe() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, translateX: 0});
+    }
+  }, [controls, inView]);
+
   return (
-    <section className="text-center mb-20" id="contact">
+    <motion.div 
+    ref={ref}
+    className="text-center mb-20" id="contact"
+    initial={{ opacity: 0, translateX: -50 }}
+    animate={controls}
+    transition={{ duration: 0.5 }}>
       <h1 className="text-gradient font-dmdisplay font-semibold mt-20 ss:text-[52px] text-[32px]">
         Let's Connect
       </h1>
@@ -31,6 +47,6 @@ export default function ContactMe() {
           <BsInstagram className="text-white xxxs:ml-3  xxs:ml-4 ml-8" size={30} />
         </a>
       </div>
-    </section>
+    </motion.div>
   );
 }

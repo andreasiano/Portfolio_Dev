@@ -1,14 +1,27 @@
-import React from 'react'
+import { useEffect } from "react";
 import { imgData } from "../constants";
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function ImageCards() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, translateX: 0, translateY: 0 });
+    }
+  }, [controls, inView]);
+
   return (
-    <div id="works" className="grid md:grid-cols-2 gap-10">
-      {imgData.map((item, index) => (
-        <a href={item.link}>
-          <div
-            key={index}
+    <div id="works" className="grid md:grid-cols-2 gap-10" ref={ref}>
+      {imgData.map((item, i) => (
+        <a key={item.id} href={item.link}>
+          <motion.div
             className="shadow-xl font-dmdisplay relative overflow-hidden rounded-xl group"
+            initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+            animate={controls}
+            transition={{ duration: 0.5, delay: i * 0.3 }}
           >
             <img
               className="transition-transform group-hover:scale-110 duration-1000 object-contain"
@@ -32,7 +45,7 @@ export default function ImageCards() {
                 </a>
               </button>
             </div>
-          </div>
+          </motion.div>
         </a>
       ))}
     </div>

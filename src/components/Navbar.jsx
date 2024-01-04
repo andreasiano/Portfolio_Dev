@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { navLinks } from "../constants";
 import { BiMenuAltRight } from "react-icons/bi"
 import { AiOutlineClose } from "react-icons/ai";
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [nav, setNav] = useState(false)
@@ -15,7 +16,12 @@ export default function Navbar() {
     }
   }
   return (
-    <nav className="flex py-6 justify-between items-center navbar">
+    <motion.div 
+    className="flex py-6 justify-between items-center navbar"
+    initial={{ opacity: 0, translateY: -50 }}
+    animate={{opacity: 1, translateY: 0}}
+    transition={{ duration: 0.5 }}
+    >
       <h1 className="lg:text-xl cursor-pointer xxs:text-[20px] text-white font-bold tracking-tighter">
         ANDREA PENSIERI
       </h1>
@@ -61,6 +67,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.div>
   );
 }
