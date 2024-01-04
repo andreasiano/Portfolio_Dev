@@ -3,13 +3,14 @@ import { imgData } from "../constants";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+
 export default function ImageCards() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
-      controls.start({ opacity: 1, translateX: 0, translateY: 0 });
+      controls.start({ opacity: 1, translateX: 0});
     }
   }, [controls, inView]);
 
@@ -19,7 +20,8 @@ export default function ImageCards() {
         <a key={item.id} href={item.link}>
           <motion.div
             className="shadow-xl font-dmdisplay relative overflow-hidden rounded-xl group"
-            initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+            ref={ref}
+            initial={{ opacity: 0, translateX: -50 }}
             animate={controls}
             transition={{ duration: 0.5, delay: i * 0.6 }}
           >
