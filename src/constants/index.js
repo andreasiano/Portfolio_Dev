@@ -27,7 +27,7 @@ export const imgData = [
            description:
              "This is a personal project based on my passion for East Asian Cultures. It is a Blog built with React and Bootstrap.",
            button: "See Project",
-           link: "https://east-asian-blog.netlify.app/",
+           link: "https://east-asian-blog.vercel.app/",
            icon: <BsFillArrowRightCircleFill />,
          },
          {
